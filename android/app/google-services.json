@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "748023976415",
+    "firebase_url": "https://next-hour-eadc4.firebaseio.com",
+    "project_id": "next-hour-eadc4",
+    "storage_bucket": "next-hour-eadc4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:748023976415:android:593e11472d9c56fdedb46a",
+        "android_client_info": {
+          "package_name": "com.nexthour.nexthourapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "748023976415-clu2ni0so48mk6nnb5uk1qvqke02eucq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.nexthour.nexthourapp",
+            "certificate_hash": "de3b5f4daed8c506395bff583fd8172421983974"
+          }
+        },
+        {
+          "client_id": "748023976415-11je2dv0m7qgl1m2o2398s0563nljsl6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDSLN4BGSVwLscNEu4TlJlHdaSca8I5iM4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "748023976415-11je2dv0m7qgl1m2o2398s0563nljsl6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

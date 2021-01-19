@@ -1,0 +1,243 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_custom_clippers/flutter_custom_clippers.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:next_hour/global.dart';
+import 'package:next_hour/ui/select_payment.dart';
+import 'package:next_hour/ui/subscription.dart';
+class PlanTextPage extends StatefulWidget {
+
+  final int indexPer;
+  PlanTextPage(this.indexPer);
+
+  @override
+  _PlanTextPageState createState() => _PlanTextPageState();
+}
+
+class _PlanTextPageState extends State<PlanTextPage> {
+
+  Widget appBar(){
+    return AppBar(
+      elevation: 20.0,
+      title: Text("Plan Details", style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.w600),),
+      centerTitle: true,
+      backgroundColor: primaryDarkColor.withOpacity(0.98),
+    );
+  }
+
+  Widget stickyHeader(){
+    return Stack(
+      children: <Widget>[
+        WavyHeaderImage(widget.indexPer),
+      ],
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: appBar(),
+//      backgroundColor: whiteColor,
+      body: ListView(
+        shrinkWrap: true,
+        scrollDirection: Axis.vertical,
+        physics: ClampingScrollPhysics(),
+        children: <Widget>[
+          stickyHeader(),
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Text("${plan_details[widget.indexPer]['amount']}", style: TextStyle(
+                  color: whiteColor,
+                  fontSize: 24.0,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              SizedBox(
+                width: 2.0,
+              ),
+              Text("${plan_details[widget.indexPer]['currency']}", style: TextStyle(
+                color: whiteColor,
+                fontSize: 15.0,
+                fontWeight: FontWeight.w400,
+              ),
+              ),
+            ],
+          ),
+          plan_details[widget.indexPer]['pricing_texts'] == null ? SizedBox.shrink() : Padding(
+            padding: EdgeInsets.only(left: 30.0, right: 20.0, top: 35.0),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: <Widget>[
+                Icon(FontAwesomeIcons.check, color: whiteColor, size: 18.0, ),
+                SizedBox(width: 15.0,),
+                Text("${plan_details[widget.indexPer]['pricing_texts']['title1']}", style: TextStyle(color: whiteColor),)
+              ],
+            ),
+          ),
+
+          plan_details[widget.indexPer]['pricing_texts'] == null ? SizedBox.shrink() : Padding(
+            padding: EdgeInsets.only(left: 30.0, right: 20.0, top: 35.0),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: <Widget>[
+                Icon(FontAwesomeIcons.check, color: whiteColor, size: 18.0, ),
+                SizedBox(width: 15.0,),
+                Text("${plan_details[widget.indexPer]['pricing_texts']['title2']}", style: TextStyle(color: whiteColor),)
+              ],
+            ),
+          ),
+          plan_details[widget.indexPer]['pricing_texts'] == null ? SizedBox.shrink() : Padding(
+            padding: EdgeInsets.only(left: 30.0, right: 20.0, top: 35.0),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: <Widget>[
+                Icon(FontAwesomeIcons.check, color: whiteColor, size: 18.0, ),
+                SizedBox(width: 15.0,),
+                Text("${plan_details[widget.indexPer]['pricing_texts']['title3']}", style: TextStyle(color: whiteColor),)
+              ],
+            ),
+          ),
+          plan_details[widget.indexPer]['pricing_texts'] == null ? SizedBox.shrink() : Padding(
+            padding: EdgeInsets.only(left: 30.0, right: 20.0, top: 35.0),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: <Widget>[
+                Icon(FontAwesomeIcons.check, color: whiteColor, size: 18.0, ),
+                SizedBox(width: 15.0,),
+                Text("${plan_details[widget.indexPer]['pricing_texts']['title4']}", style: TextStyle(color: whiteColor),)
+              ],
+            ),
+          ),
+          plan_details[widget.indexPer]['pricing_texts'] == null ? SizedBox.shrink() : Padding(
+            padding: EdgeInsets.only(left: 30.0, right: 20.0, top: 35.0),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: <Widget>[
+                Icon(FontAwesomeIcons.check, color: whiteColor, size: 18.0, ),
+                SizedBox(width: 15.0,),
+                Text("${plan_details[widget.indexPer]['pricing_texts']['title5']}", style: TextStyle(color: whiteColor),)
+              ],
+            ),
+          ),
+
+          plan_details[widget.indexPer]['pricing_texts'] == null ? SizedBox.shrink() : Padding(
+            padding: EdgeInsets.only(left: 30.0, right: 20.0, top: 35.0),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: <Widget>[
+                Icon(FontAwesomeIcons.check, color: whiteColor, size: 18.0, ),
+                SizedBox(width: 15.0,),
+                Text("${plan_details[widget.indexPer]['pricing_texts']['title6']}", style: TextStyle(color: whiteColor),)
+              ],
+            ),
+          ),
+
+          Container(
+//            margin: EdgeInsets.only(left: 60.0, right: 60.0, top: 35.0),
+            padding: EdgeInsets.only(left: 60.0, right: 60.0, top: 35.0),
+            child: RaisedButton(
+              color: blackColor,
+//              hoverColor: bluePrime,
+              splashColor: bluePrime.withOpacity(0.7),
+              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0)),
+              child: Container(
+                padding: EdgeInsets.only(bottom: 20.0, top: 20.0),
+                child: Text("Subscribe Now", style: TextStyle(color: whiteColor, fontSize: 18.0, ), ),
+              ),
+                onPressed: (){
+                  var router = new MaterialPageRoute(
+                      builder: (BuildContext context) =>
+                      new SelectPayment(
+                        indexPer: widget.indexPer,
+                      ));
+                  Navigator.of(context).push(router);
+            }),
+          )
+        ],
+      ),
+    );
+  }
+}
+
+class WavyHeaderImage extends StatefulWidget {
+  WavyHeaderImage(this.indexPer);
+  final indexPer;
+  @override
+  _WavyHeaderImageState createState() => _WavyHeaderImageState();
+}
+
+class _WavyHeaderImageState extends State<WavyHeaderImage> {
+  @override
+  Widget build(BuildContext context) {
+    double width = MediaQuery.of(context).size.width;
+    return ClipPath(
+      clipper: DiagonalPathClipperTwo(),
+      child: Container(
+        height: 120,
+        width: width,
+//        color: bluePrime,
+        decoration: BoxDecoration(
+//          borderRadius: new BorderRadius.circular(20.0),
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomRight,
+            stops: [0.1, 0.5, 0.7, 0.9],
+            colors: [
+              Color.fromRGBO(255, 165, 0, 0.4)
+                  .withOpacity(0.4),
+              Color.fromRGBO(255, 165, 0, 0.3)
+                  .withOpacity(0.5),
+              Color.fromRGBO(255, 165, 0, 0.2)
+                  .withOpacity(0.6),
+              Color.fromRGBO(255, 165, 0, 0.1)
+                  .withOpacity(0.7),
+            ],
+          ),
+        ),
+        child: Padding(padding: EdgeInsets.only(left: 40.0, top: 15.0, right: 20.0,bottom: 5.0),
+            child: Text("${plan_details[widget.indexPer]['name']}".toUpperCase(), style: TextStyle(
+              fontSize: 30.0,
+              fontWeight: FontWeight.w600,
+              letterSpacing: 1.5,
+            ),
+            ),
+        ),
+      ),
+    );
+  }
+}
+
+class BottomWaveClipper extends CustomClipper<Path> {
+  @override
+  Path getClip(Size size) {
+    var path = Path();
+    path.lineTo(0.0, size.height - 20);
+
+    var firstControlPoint = Offset(size.width /4, size.height);
+    var firstEndPoint = Offset(size.width / 2.25, size.height - 70.0);
+    path.quadraticBezierTo(firstControlPoint.dx, firstControlPoint.dy,
+        firstEndPoint.dx, firstEndPoint.dy);
+
+    var secondControlPoint =
+    Offset(size.width - (size.width / 4), size.height - 170);
+    var secondEndPoint = Offset(size.width, size.height - 50);
+    path.quadraticBezierTo(secondControlPoint.dx, secondControlPoint.dy,
+        secondEndPoint.dx, secondEndPoint.dy);
+
+    path.lineTo(size.width, size.height - 40);
+    path.lineTo(size.width, 0.0);
+    path.close();
+
+    return path;
+  }
+
+  @override
+  bool shouldReclip(CustomClipper<Path> oldClipper) => false;
+}
